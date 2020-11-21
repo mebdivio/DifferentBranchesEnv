@@ -4,10 +4,10 @@ name: Divio Continuous Deployment
 
 # push event to a branch triggers the workflow
 on:
-push:
-  branches: 
-    - develop
-    - master
+  push:
+    branches: 
+      - develop
+      - master
 
   # Setting environment variables of the secret keys for easy access
   env:
