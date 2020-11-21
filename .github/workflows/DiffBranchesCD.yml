@@ -8,7 +8,7 @@ push:
   branches: 
     - develop
     - master
-    
+
   # Setting environment variables of the secret keys for easy access
   env:
     API_TOKEN: ${{ secrets.DIVIO_API_TOKEN }}
@@ -33,12 +33,11 @@ deploy:
   # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
-  - uses: actions/checkout@develop
-      
-  - name: Deploy to Divio Cloud using the API
-   run: |
+  - uses: actions/checkout@develop   
+  - name: Deploy to the Test environment
+    run: |
      # To deploy to TEST
-     curl -X POST --data "environment=TEST_ENVIRONMENT_ID" --header "Authorization: Token API_TOKEN" https://api.divio.com/apps/v3/deployments/
+      curl -X POST --data "environment=TEST_ENVIRONMENT_ID" --header "Authorization: Token API_TOKEN" https://api.divio.com/apps/v3/deployments/
 
 if: ${{ github.event.push.master }}
 # jobs run sequentially or in parallel to execute the workflow
@@ -56,9 +55,8 @@ deploy:
   # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
-  - uses: actions/checkout@master
-      
+  - uses: actions/checkout@master    
   - name: Deploy to the LIVE environment
-   run: |
+    run: |
      # To deploy to LIVE
-     curl -X POST --data "environment=LIVE_ENVIRONMENT_ID" --header "Authorization: Token API_TOKEN" https://api.divio.com/apps/v3/deployments/
+      curl -X POST --data "environment=LIVE_ENVIRONMENT_ID" --header "Authorization: Token API_TOKEN" https://api.divio.com/apps/v3/deployments/
