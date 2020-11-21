@@ -11,7 +11,7 @@ on:
 
   # Setting environment variables of the secret keys for easy access
 env:
-  API_TOKEN: ${{ secrets.DIVIO_API_TOKEN }}
+  API_TOKEN: ${{ secrets.API_TOKEN }}
   TEST_ENVIRONMENT_ID: ${{ secrets.TEST_ENVIRONMENT_ID }}  
   LIVE_ENVIRONMENT_ID: ${{ secrets.LIVE_ENVIRONMENT_ID }}
 
@@ -25,7 +25,7 @@ jobs:
 deploy:
   # Setting environment variables of the secret keys for easy access
   # env:
-  #   API_TOKEN: ${{ secrets.DIVIO_API_TOKEN }}
+  #   API_TOKEN: ${{ secrets.API_TOKEN }}
   #   TEST_ENVIRONMENT_ID: ${{ secrets.TEST_ENVIRONMENT_ID }}  
   #   LIVE_ENVIRONMENT_ID: ${{ secrets.LIVE_ENVIRONMENT_ID }}
   # The type of runner that this job will run on
@@ -47,7 +47,7 @@ deploy:
 # deploy:
 #   # Setting environment variables of the secret keys for easy access
 #   # env:
-#   #   API_TOKEN: ${{ secrets.DIVIO_API_TOKEN }}
+#   #   API_TOKEN: ${{ secrets.API_TOKEN }}
 #   #   TEST_ENVIRONMENT_ID: ${{ secrets.TEST_ENVIRONMENT_ID }}  
 #   #   LIVE_ENVIRONMENT_ID: ${{ secrets.LIVE_ENVIRONMENT_ID }}
 #   # The type of runner that this job will run on
