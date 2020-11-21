@@ -34,9 +34,8 @@ deploy:
   steps:
   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
   - uses: actions/checkout@develop
-      
   - name: Deploy to the Test environment
-   run: |
+    run: |
      # To deploy to TEST
      curl -X POST --data "environment=TEST_ENVIRONMENT_ID" --header "Authorization: Token API_TOKEN" https://api.divio.com/apps/v3/deployments/
 
