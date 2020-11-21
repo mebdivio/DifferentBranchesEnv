@@ -17,7 +17,7 @@ env:
 
 
 # Push to develop branch triggers deployment to the TEST environment
-if: ${{ github.event.push.develop }}
+# if: ${{ github.event.push.develop }}
 # jobs run sequentially or in parallel to execute the workflow
 jobs:
 
