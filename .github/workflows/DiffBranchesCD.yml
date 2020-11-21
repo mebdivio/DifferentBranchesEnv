@@ -17,7 +17,7 @@ env:
 
 
 # Push to develop branch triggers deployment to the TEST environment
-# if: ${{ github.event.push.develop }}
+if: ${{ github.event.push.develop }}
 # jobs run sequentially or in parallel to execute the workflow
 jobs:
 
@@ -55,7 +55,7 @@ jobs:
 #   # Steps represent a sequence of tasks that will be executed as part of the job
 #   steps:
 #   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
-#   - uses: actions/checkout@master
+#   - uses: actions/checkout@v2
       
 #   - name: Deploy to the LIVE environment
 #    run: |
