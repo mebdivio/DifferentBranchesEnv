@@ -38,6 +38,7 @@ jobs:
     run: |
      # To deploy to TEST
      curl -X POST --data "environment=$TEST_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
+
 - - -
 # if: ${{ github.event.push.master }}
 # # jobs run sequentially or in parallel to execute the workflow
