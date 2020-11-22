@@ -30,9 +30,9 @@ jobs:
   # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
-  - uses: actions/checkout@v2
+  - uses: actions/checkout@v2/develop
   # Push to develop branch triggers deployment to the TEST environment
-    if: ${{ github.event.push.develop }} 
+    # if: ${{ github.event.push.develop }} 
   - name: Deploy to the Test environment
     run: |
      # To deploy to TEST
