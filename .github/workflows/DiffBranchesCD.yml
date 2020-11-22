@@ -56,8 +56,7 @@ deploy:
   steps:
   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
   - uses: actions/checkout@v2
-      
   - name: Deploy to the LIVE environment
-   run: |
+    run: |
      # To deploy to LIVE
      curl -X POST --data "environment=$LIVE_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
