@@ -31,6 +31,7 @@ jobs:
   steps:
   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
   - uses: actions/checkout@v2
+  
   # Push to develop branch triggers deployment to the TEST environment
     if: ${{ github.event.push.develop }} 
   - name: Deploy to the Test environment
