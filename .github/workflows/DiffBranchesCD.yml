@@ -14,7 +14,7 @@ env:
   API_TOKEN: ${{ secrets.API_TOKEN }}
   TEST_ENVIRONMENT_ID: ${{ secrets.TEST_ENVIRONMENT_ID }}  
   LIVE_ENVIRONMENT_ID: ${{ secrets.LIVE_ENVIRONMENT_ID }}
----
+
 on:
   push:
     branches: [ develop ]
@@ -33,7 +33,7 @@ jobs:
   - uses: actions/checkout@v2
 
   # Push to develop branch triggers deployment to the TEST environment
-    if: ${{ github.event.push.develop }} 
+  #  if: ${{ github.event.push.develop }} 
   - name: Deploy to the Test environment
     run: |
      # To deploy to TEST
