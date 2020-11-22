@@ -32,13 +32,12 @@ jobs:
   steps:
   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
   - uses: actions/checkout@v2
-# Push to develop branch triggers deployment to the TEST environment
-  if: ${{ github.event.push.develop }} {
+  # Push to develop branch triggers deployment to the TEST environment
+  # if: ${{ github.event.push.develop }} 
   - name: Deploy to the Test environment
     run: |
      # To deploy to TEST
      curl -X POST --data "environment=TEST_ENVIRONMENT_ID" --header "Authorization: Token API_TOKEN" https://api.divio.com/apps/v3/deployments/
-     }
 # if: ${{ github.event.push.master }}
 # # jobs run sequentially or in parallel to execute the workflow
 # jobs:
