@@ -1,4 +1,4 @@
-# This workflow use the Divio API to deploy into the Live Environment on a push to master branch event
+# This workflow use the Divio API to deploy into the Test Environment on a push to develop branch event
 
 name: Divio Continuous Deployment
 
@@ -10,7 +10,7 @@ env:
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
 
 # jobs run sequentially or in parallel to execute the workflow
 jobs:
@@ -24,7 +24,9 @@ jobs:
   steps:
   # Checks-out the repository under $GITHUB_WORKSPACE, so this job can access it
   - uses: actions/checkout@v2
-  - name: Deploy to the LIVE environment
+
+  # Push to develop branch triggers deployment to the TEST environment
+  - name: Deploy to the Test environment
     run: |
-     # To deploy to LIVE
-     curl -X POST --data "environment=$LIVE_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
+     # To deploy to TEST
+     curl -X POST --data "environment=$TEST_ENVIRONMENT_ID" --header "Authorization: Token $API_TOKEN" https://api.divio.com/apps/v3/deployments/
