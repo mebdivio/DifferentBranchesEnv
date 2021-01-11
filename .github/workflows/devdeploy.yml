@@ -1,4 +1,4 @@
-# This workflow use the Divio API to deploy into the Test Environment on a push to develop branch event
+# This workflow will deploy into the Test Environment on a push to develop branch event
 
 name: Divio Continuous Deployment
 
